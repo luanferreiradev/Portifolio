@@ -1,0 +1,46 @@
+.about__resume {
+  display: flex;
+  align-items: center; /* Alinhar verticalmente os itens ao centro */
+}
+
+.about__content {
+  flex: 1; /*Ocupa todo o espaço restante */
+}
+
+.img-fluid.w-100.rounded-circle.shadow-sm {
+  border-radius: 50%;
+  width: 200px; /* ajuste o tamanho conforme necessário */
+  height: auto;
+  margin-right: 40px;
+}
+
+@keyframes eraseText {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+.changing-text.erasing {
+  animation: eraseText 1s forwards;
+}
+
+.changing-text {
+  color: rgb(221, 4, 4); /* Defina a cor que deseja para o texto gerado */
+}
+
+
+
+
+@media (min-width: 890px) {
+  .about__resume {
+    flex-direction: row;
+    gap: 32px;
+  }
+  
+  .about__content p {
+    width: 60%;
+  }
+}

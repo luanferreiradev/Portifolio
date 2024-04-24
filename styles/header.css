@@ -1,0 +1,11 @@
+.header {
+  display: flex;
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  gap: 16px;
+}
+
+.header__btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

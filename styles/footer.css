@@ -1,0 +1,25 @@
+.footer {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 16px;
+  background-color: black; /* Adicionando um fundo preto */
+}
+
+.footer p {
+  color: white;
+}
+
+.social-icon {
+  width: 30px; /* Defina o tamanho desejado aqui */
+  height: auto; /* Isso garante que a proporção da imagem seja mantida */
+}
+
+
+@media (min-width: 890px) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
