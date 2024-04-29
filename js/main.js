@@ -1,41 +1,67 @@
+// Obtendo a referência do elemento HTML com o id "changingText"
 const changingText = document.getElementById("changingText");
-const phrases = [
 
-  "Software Engineer Student",
-  "Computer Technician",
-  "Full Stack Developer",
-];
-let phraseIndex = 0;
-let letterIndex = 0;
-let eraseTimer;
-let writeTimer;
+// Obtendo a lista de frases do atributo data-phrases do elemento e dividindo em um array
+const phrases = changingText.getAttribute("data-phrases").split(", ");
 
+// Inicializando variáveis de controle
+let phraseIndex = 0; // Índice da frase atual
+let letterIndex = 0; // Índice da letra atual na frase atual
+let eraseTimer; // Timer para a função de apagar texto
+let writeTimer; // Timer para a função de escrever texto
+let currentText = ""; // Texto atual exibido no elemento
+
+// Função para mostrar a próxima letra da frase atual
 function showNextLetter() {
-    changingText.textContent += phrases[phraseIndex][letterIndex];
-    letterIndex++;
-    if (letterIndex < phrases[phraseIndex].length) {
-        writeTimer = setTimeout(showNextLetter, 100); // Ajuste o tempo entre cada letra conforme desejado
-    } else {
-        eraseTimer = setTimeout(eraseText, 1000); // Tempo de espera após escrever toda a frase
-    }
+  // Adiciona a próxima letra da frase atual ao texto atual
+  currentText += phrases[phraseIndex][letterIndex];
+
+  // Define o texto atual no elemento
+  changingText.textContent = currentText;
+
+  // Incrementa o índice da letra
+  letterIndex++;
+
+  // Se ainda houver letras na frase atual
+  if (letterIndex < phrases[phraseIndex].length) {
+    // Configura um temporizador para chamar a função novamente após 100ms
+    writeTimer = setTimeout(showNextLetter, 100);
+  } else {
+    // Se a frase atual estiver completa, configura um temporizador para apagar o texto após 1 segundo
+    eraseTimer = setTimeout(eraseText, 1000);
+  }
 }
 
+// Função para apagar o texto
 function eraseText() {
-    changingText.textContent = changingText.textContent.slice(0, -1);
-    if (changingText.textContent === "") {
-        // Adiciona o primeiro caractere da próxima frase somente quando o texto estiver completamente apagado
-        phraseIndex = (phraseIndex + 1) % phrases.length;
-        letterIndex = 0;
-        changingText.textContent = ""; // Limpa completamente o texto antes de adicionar o primeiro caractere da próxima frase
-        writeTimer = setTimeout(showNextLetter, 500); // Tempo de espera antes de começar a escrever a próxima frase
-    } else {
-        eraseTimer = setTimeout(eraseText, 100); // Ajuste o tempo entre cada letra apagada conforme desejado
-    }
+  // Remove a última letra do texto atual
+  currentText = currentText.slice(0, -1);
+
+  // Define o texto atual no elemento
+  changingText.textContent = currentText;
+
+  // Se o texto atual estiver vazio (após apagar toda a frase)
+  if (currentText === "") {
+    // Avança para a próxima frase
+    phraseIndex = (phraseIndex + 1) % phrases.length;
+    
+    // Reseta o índice da letra e define um espaço em branco como texto atual
+    letterIndex = 0;
+    currentText = " ";
+    
+    // Configura um temporizador para começar a escrever a próxima frase após 500ms
+    writeTimer = setTimeout(showNextLetter, 500);
+  } else {
+    // Se ainda houver letras no texto atual, configura um temporizador para apagar a próxima letra após 100ms
+    eraseTimer = setTimeout(eraseText, 100);
+  }
 }
 
+// Função para iniciar a animação do texto
 function startTextAnimation() {
-    writeTimer = setTimeout(showNextLetter, 100); // Tempo de espera antes de começar a escrever a primeira frase
+  // Configura um temporizador para começar a escrever a primeira frase após 100ms
+  writeTimer = setTimeout(showNextLetter, 100);
 }
 
-// Inicie a animação
+// Inicia a animação do texto
 startTextAnimation();
