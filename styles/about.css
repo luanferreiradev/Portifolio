@@ -11,7 +11,11 @@
 }
 
 .img-overlay {
+<<<<<<< HEAD
+  position:absolute;
+=======
   position: absolute;
+>>>>>>> 92ec3ef1cbed88160f1ee52503685efb238edee0
   top: 0;
   left: 680px;
   z-index: 0;
@@ -47,4 +51,14 @@
   .about__content p {
     width: 60%;
   }
+<<<<<<< HEAD
+
+  .img-overlay {
+    position:absolute;
+    top: 0;
+    left: 680px;
+    z-index: 0;
+  }
+=======
+>>>>>>> 92ec3ef1cbed88160f1ee52503685efb238edee0
 }
