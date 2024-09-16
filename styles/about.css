@@ -1,0 +1,57 @@
+.about__resume {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.about__content {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.img-overlay {
+  position:absolute;
+  top: 0;
+  left: 680px;
+  z-index: 0;
+}
+
+.img-fluid.w-100.rounded-circle.shadow-sm {
+  border-radius: 50%;
+  width: 200px;
+  height: auto;
+}
+
+.text-section {
+  margin-bottom: 20px; /* Espaçamento entre as seções de texto */
+}
+
+.changing-text {
+  color: rgb(221, 4, 4);
+}
+
+/* Estilos para o caractere antes das frases */
+.changing-text::before {
+  content: "*"; /* Caractere a ser exibido */
+  color: red; /* Cor vermelha */
+  margin-right: 5px; /* Espaço entre o caractere e o texto */
+}
+
+@media (min-width: 890px) {
+  .about__resume {
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  .about__content p {
+    width: 60%;
+  }
+
+  .img-overlay {
+    position:absolute;
+    top: 0;
+    left: 680px;
+    z-index: 0;
+  }
+}

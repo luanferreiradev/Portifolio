@@ -1,0 +1,100 @@
+@import url('./index.css');
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-purple: rgb(221, 4, 4);
+  --color-black: #fff;
+  --color-white: #0a0a0a;
+
+  --screen-mobile: 320;
+  --screen-tablet: 890;
+  --screen-desktop: 1200;
+
+  --gap: 8px;
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: var(--color-black);
+  background: var(--color-purple);
+}
+
+::selection {
+  color: var(--color-black);
+  background: var(--color-purple);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-black);
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  height: 100vh;
+
+  /* Chrome */
+  zoom: 2; 
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: var(--color-purple);
+}
+
+h1,
+h2,
+h3,
+p,
+ul, 
+a,
+time,
+strong,
+button {
+  margin: 0;
+  color: var(--color-white);
+  line-height: 32px;
+}
+
+header, section {
+  margin-bottom: 32px;
+}
+
+header, section, footer {
+  padding: 16px;
+}
+
+@media (min-width: 890px) {
+  header, section, footer {
+    padding: 16px 64px;
+  }
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.mb {
+  margin-bottom: var(--gap);
+}
+
+.clip {
+  background-color: var(--color-purple);
+  color: var(--color-black);
+}

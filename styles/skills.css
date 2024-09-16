@@ -1,0 +1,35 @@
+.skills__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 16px;
+  background-color: rgb(221, 4, 4);
+  padding: 24px;
+  border-radius: 5px;
+}
+
+.skills:not(:last-child) {
+  margin-bottom: 32px;
+} 
+
+.skills ul li {
+  margin-top: 8px;
+}
+
+#skills {
+  text-align: center;
+}
+
+#skills h1 {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 890px) {
+  .skills__inner {
+    flex-direction: row;
+  }
+
+  .skills:not(:last-child) {
+    margin-bottom: 0;
+  } 
+}
