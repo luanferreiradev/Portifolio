@@ -26,12 +26,21 @@
 
 @media (max-width: 768px) {
   .skills__inner {
-    flex-direction: row;
+    flex-direction: column;
+    margin-top: 30px;
   }
 
   .skills:not(:last-child) {
     margin-bottom: 0;
-  } 
+  }
+  #skills {
+    text-align:center;
+    justify-content: space-between;
+  }
+  #skills h1 {
+    margin-bottom: 20px;
+    margin-top: 90px;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1300px) {

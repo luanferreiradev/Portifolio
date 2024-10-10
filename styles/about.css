@@ -30,15 +30,15 @@
 
 .changing-text {
   color: rgb(221, 4, 4);
+  white-space: nowrap;
 }
 
 /* Estilos para o caractere antes das frases */
 .changing-text::before {
-  content: "*"; /* Caractere a ser exibido */
+  content: "|"; /* Caractere a ser exibido */
   color: red; /* Cor vermelha */
   margin-right: 5px; /* Espaço entre o caractere e o texto */
 }
-
 
 
   .about__content p {
@@ -50,13 +50,23 @@
   .about__resume{
     flex-direction: row;
     gap: 32px;
-    top: 130px;
+    top: 110px;
+  }
+  .about__content h1{
+    margin-top: 20px;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; 
   }
   .about__content {
     flex: 1;
     position: relative;
     z-index: 1;
     width: 10%;
+  }
+
+  .about__content p{
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center;
   }
   .img-overlay{
     top: -20%; /* Ajuste a posição vertical */
@@ -69,6 +79,7 @@
     width: 150px;
     height: auto;
   }
+
   }
 
   @media (min-width: 769px) and (max-width: 1650px) {
