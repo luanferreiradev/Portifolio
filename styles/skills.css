@@ -1,6 +1,6 @@
 .skills__inner {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   margin-top: 16px;
   background-color: rgb(221, 4, 4);
@@ -24,7 +24,7 @@
   margin-bottom: 20px;
 }
 
-@media (min-width: 890px) {
+@media (max-width: 768px) {
   .skills__inner {
     flex-direction: row;
   }
@@ -32,4 +32,25 @@
   .skills:not(:last-child) {
     margin-bottom: 0;
   } 
+}
+
+@media (min-width: 769px) and (max-width: 1300px) {
+  .skills__inner {
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 24px;
+  }
+  .skills:not(:last-child) {
+    margin-bottom: 20px;
+  } 
+  .skills ul li {
+    margin-top: 10px;
+  }
+  #skills {
+    text-align:center;
+    justify-content: space-between;
+  }
+  #skills h1 {
+    margin-bottom: 20px;
+  }
 }
